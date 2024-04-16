@@ -1,10 +1,10 @@
-FROM rust:1.67 AS builder
+FROM rust:1.75 AS builder
 
 WORKDIR /build
 
 COPY ./ .
 
-RUN cargo build --release
+RUN cargo build --release --features s3
 
 FROM ubuntu
 
